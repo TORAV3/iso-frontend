@@ -1,0 +1,85 @@
+doctype html
+html(lang="en" data-theme="light")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title
+            block title
+        link(rel="icon" type="image/png" href="assets/images/favicon.png" sizes="16x16")
+        link(rel="stylesheet" href="assets/css/remixicon.css")
+        link(rel="stylesheet" href="assets/css/lib/bootstrap.min.css")
+        link(rel="stylesheet" href="assets/css/style.css")
+
+        block csslink
+        block cssstyle
+    body
+        aside.sidebar
+            button.sidebar-close-btn(type="button")
+                iconify-icon(icon="radix-icons:cross-2")
+            div
+                a.sidebar-logo(href="index.html")
+                    img.light-logo(src="assets/images/logo.png" alt="site logo")
+                    img.dark-logo(src="assets/images/logo-light.png" alt="site logo")
+                    img.logo-icon(src="assets/images/logo-icon.png" alt="site logo")
+            div.sidebar-menu-area
+                ul.sidebar-menu#sidebar-menu
+                    li.dropdown
+                        a(href="javascript:void(0)")
+                            iconify-icon.menu-icon(icon="solar:user-broken")
+                            span Profil Peserta
+                        ul.sidebar-submenu
+                            li
+                                a(href="index.html")
+                                    i.ri-circle-fill.circle-icon.text-primary-600.w-auto
+                                    | Biodata
+        main.dashboard-main
+            .navbar-header
+                .row.align-items-center.justify-content-between
+                    .col-auto
+                        .d-flex.flex-wrap.align-items-center.gap-4
+                            button.sidebar-toggle(type="button")
+                                iconify-icon.icon.text-2xl.non-active(icon="heroicons:bars-3-solid")
+                                iconify-icon.icon.text-2xl.active(icon="iconoir:arrow-right")
+                            button.sidebar-mobile-toggle(type="button")
+                                iconify-icon.icon(icon="heroicons:bars-3-solid")
+                            form.navbar-search
+                                input(type="text" name="search" placeholder="Search")
+                                iconify-icon.icon(icon="ion:search-outline")
+                    .col-auto
+                        .d-flex.flex-wrap.align-items-center.gap-3
+                            div.dropdown
+                                button.d-flex.justify-content-center.align-items-center.rounded-circle(
+                                    type="button",
+                                    data-bs-toggle="dropdown"
+                                )
+                                    img.w-40-px.h-40-px.object-fit-cover.rounded-circle(
+                                        src="assets/images/user.png",
+                                        alt="image"
+                                    )
+                                div.dropdown-menu.to-top.dropdown-menu-sm
+                                    div.py-12.px-16.radius-8.bg-primary-50.mb-16.d-flex.align-items-center.justify-content-between.gap-2
+                                        div
+                                            h6.text-lg.text-primary-light.fw-semibold.mb-2 Shaidul Islam
+                                            span.text-secondary-light.fw-medium.text-sm Admin
+                                        button(type="button" class="hover-text-danger")
+                                            iconify-icon.icon(
+                                                icon="radix-icons:cross-1",
+                                                class="text-xl"
+                                            )
+                                    ul.to-top-list
+                                        li
+                                            a.dropdown-item.text-black.px-0.py-8.hover-bg-transparent.hover-text-danger.d-flex.align-items-center.gap-3(href="javascript:void(0)")
+                                                iconify-icon.icon(
+                                                    icon="lucide:power",
+                                                    class="text-xl"
+                                                )
+                                                | Log Out
+
+            .dashboard-main-body
+                block content
+        script(src="assets/js/lib/jquery-3.7.1.min.js") 
+        script(src="assets/js/lib/bootstrap.bundle.min.js") 
+        script(src="assets/js/lib/iconify-icon.min.js") 
+        script(src="assets/js/app.js") 
+        block script
+        block js
