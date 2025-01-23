@@ -1,0 +1,18 @@
+extends ../../layouts/layout
+
+block title
+    | Manajemen User
+
+block csslink
+    link(rel='stylesheet' href='/iso/css/muser.css')
+
+block content
+    #index-page
+
+block script
+    script(src='/iso/js/muser/index.js')
+    script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" type="text/javascript")
+
+block js
+    script.
+        const token = "#{token}"

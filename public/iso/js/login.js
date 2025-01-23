@@ -65,10 +65,28 @@ function submit_form() {
           60 * 60
         }; Secure; SameSite=Strict`;
         form.clear();
-        webix.message({ type: "success", text: "Login berhasil" });
-        setTimeout(() => {
-          window.location.href = "/dashboard";
-        }, 1300);
+
+        axios
+          .get("http://localhost:3000/iso/api/login/data", {
+            headers: {
+              Authorization: "Bearer " + response.data.data,
+            },
+          })
+          .then((res) => {
+            webix.message({ type: "success", text: "Login berhasil" });
+            if (res.data.data.type === "internal") {
+              setTimeout(() => {
+                window.location.href = "/user-access";
+              }, 1300);
+            } else {
+              setTimeout(() => {
+                window.location.href = "/dashboard";
+              }, 1300);
+            }
+          })
+          .catch((err) => {
+            webix.message({ type: "error", text: err.response.data.data });
+          });
       })
       .catch(function (error) {
         webix.message({ type: "error", text: error.response.data.data });
