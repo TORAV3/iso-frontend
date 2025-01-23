@@ -88,6 +88,7 @@ function submit_form() {
   const form = $$("registerForm");
   if (form.validate()) {
     var formData = form.getValues();
+    formData["type"] = "student";
     axios
       .post("http://localhost:3000/iso/api/register", formData)
       .then(function (response) {

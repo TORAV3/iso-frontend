@@ -1,0 +1,38 @@
+extends ../../layouts/layout
+
+block title
+  | Form User Access
+
+block csslink
+  link(rel='stylesheet' href='/iso/css/muser.css')
+
+block content
+  .banner-container
+    img.banner-image(src="/iso/images/doodle.png" alt="Banner")
+  hr.divider
+  .profsec
+    .profile-picture
+      img.profile-img(src="/iso/images/noimages.jpg" alt="Profile Picture")
+      button.btn.btn-prof(type="button")
+        iconify-icon(icon="solar:camera-linear" width="20" height="20")
+    .profile-details
+      h5#fullNameHeader Andi Setiawan
+      p#idHeader.text-muted ID: 68328778457GFBH
+      p#statusHeader(style="font-size:12px;font-weight:400;") Your account is ready as Peserta, you can now apply for advice.
+    button.btn.btn-share(type="button" title="Share Profile")
+      iconify-icon(icon="solar:share-outline" width="20" height="20")
+  .title-details
+    .row.mt-4
+      .col-12
+        p.lastupdate Last Update August 1
+
+  #index-page
+
+block script
+  script(src='/iso/js/muser/form.js')
+  script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" type="text/javascript")
+
+block js
+  script.
+    const token = "#{token}"
+    const id = "#{id}"

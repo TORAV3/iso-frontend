@@ -35,25 +35,22 @@ body {
   padding: 15px;
 }
 
-.btnmasuk .webix_el_box button {
+.btnmasuk .webix_el_box button,
+.btnmasuk .webix_el_box button:hover,
+.btnmasuk .webix_el_box button:focus {
   background-color: #316aff;
   color: white;
   border-radius: 7px;
 }
 
-.btndaftar .webix_el_box button {
+.btndaftar .webix_el_box button,
+.btndaftar .webix_el_box button:hover,
+.btndaftar .webix_el_box button:focus {
   background-color: transparent;
   border: 1px solid #d5d7da;
   color: #414651;
   border-radius: 7px;
 }
-
-/* #login-card {
-  background: #fff;
-  padding: 50px;
-  border-radius: 10px;
-  width: 100%;
-} */
 
 @media (min-width: 768px) {
   .wrapper-content {
