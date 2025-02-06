@@ -1,0 +1,19 @@
+extends ../../layouts/layout
+
+block title
+  | Kelas
+
+block csslink
+  link(rel='stylesheet' href='/iso/css/class.css')
+
+block content
+  #index-page
+
+block script
+  script(src='/iso/js/class/index.js')
+  script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" type="text/javascript")
+
+block js
+  script.
+    const token = "#{token}"
+    const userStatus = "#{userStatus}"

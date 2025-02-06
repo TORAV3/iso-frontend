@@ -1,0 +1,44 @@
+.btnSimpan .webix_el_box button,
+.btnSimpan .webix_el_box button:hover,
+.btnSimpan .webix_el_box button:focus {
+  background-color: #316aff;
+  color: white;
+  border-radius: 7px;
+  text-align: center;
+}
+
+.btnKembali .webix_el_box button,
+.btnKembali .webix_el_box button:hover,
+.btnKembali .webix_el_box button:focus {
+  background-color: transparent;
+  color: rgb(83, 83, 83);
+  border: 1px solid rgb(61, 61, 61);
+  border-radius: 7px;
+  text-align: center;
+}
+
+.title {
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
+}
+
+.row-green {
+  background-color: #1ca43c;
+  color: white;
+}
+
+.row-red {
+  background-color: #b32834;
+  color: white;
+}
+.pagerstyle {
+  text-align: right;
+}
+
+.pagerstyle .webix_pager_item,
+.pagerstyle .webix_pager_item:hover,
+.pagerstyle .webix_pager_item:focus {
+  background-color: #398bf1;
+  color: white;
+}

@@ -1,0 +1,86 @@
+.btnSimpan .webix_el_box button,
+.btnSimpan .webix_el_box button:hover,
+.btnSimpan .webix_el_box button:focus {
+  background-color: #316aff;
+  color: white;
+  border-radius: 7px;
+  text-align: center;
+}
+
+.btnKembali .webix_el_box button,
+.btnKembali .webix_el_box button:hover,
+.btnKembali .webix_el_box button:focus {
+  background-color: transparent;
+  color: rgb(83, 83, 83);
+  border: 1px solid rgb(61, 61, 61);
+  border-radius: 7px;
+  text-align: center;
+}
+
+.webix_all_tabs .webix_item_tab.webix_selected {
+  box-shadow: inset 0 -2px #316aff;
+}
+
+.webix_all_tabs .webix_item_tab.webix_selected:focus {
+  color: #316aff;
+  box-shadow: inset 0 -2px #316aff;
+}
+
+.webix_all_tabs .webix_item_tab,
+.webix_all_tabs .webix_item_tab:focus {
+  color: #316aff;
+}
+
+.webix_all_tabs .webix_tab_more_icon .webix_icon {
+  color: #316aff;
+}
+
+.tabstyle .webix_view.webix_control.webix_el_tabbar {
+  border-width: 0px !important;
+}
+
+.uploadthumbstyle {
+  border: none;
+  margin-top: 0;
+}
+
+.uploadthumbstyle .webix_template {
+  padding: 0;
+}
+
+.pagerstyle {
+  text-align: right;
+}
+
+.pagerstyle .webix_pager_item,
+.pagerstyle .webix_pager_item:hover,
+.pagerstyle .webix_pager_item:focus {
+  background-color: #398bf1;
+  color: white;
+}
+
+.topicTableStyle .webix_ss_header,
+.topicTableStyle .webix_hcolumn,
+.topicTableStyle .webix_ss_vscroll_header,
+.topicTableStyle .webix_dd_drag_column,
+.topicTableStyle .webix_hs_left,
+.topicTableStyle .webix_hs_center,
+.topicTableStyle .webix_hs_right {
+  background: white;
+}
+
+.title {
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
+}
+
+.row-green {
+  background-color: #1ca43c;
+  color: white;
+}
+
+.row-red {
+  background-color: #b32834;
+  color: white;
+}

@@ -1,0 +1,71 @@
+doctype html
+html(lang="en" data-theme="light")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title
+            block title
+        link(rel="icon" type="image/png" href="/iso/images/logo-icon-iso.png" sizes="16x16")
+        link(rel="stylesheet" href="/assets/css/remixicon.css")
+        link(rel="stylesheet" href="/assets/css/lib/bootstrap.min.css")
+        <link rel="stylesheet" href="https://cdn.webix.com/edge/webix.css">
+        link(rel="stylesheet" href="/assets/css/style.css")
+        link(rel="stylesheet" href="/karma/css/main.css")
+        link(rel="stylesheet" href="/iso/css/userlayout.css")
+
+        block csslink
+        block cssstyle
+    body
+        header.header_area.sticky-header
+            .main_menu
+                nav.navbar.navbar-expand-lg.navbar-light.main_box
+                    .container
+                        a.navbar-brand.logo_h(href="index.html")
+                            img(style="width: 200px" src="/iso/images/logo-iso.png" alt="")
+                        button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                        .collapse.navbar-collapse.offset#navbarSupportedContent
+                            ul.nav.navbar-nav.menu_nav.ms-auto
+                                li.nav-item.active
+                                    a.nav-link(href="index.html") Kelas Online
+                                li.nav-item
+                                    a.nav-link(href="index.html") Artikel
+                                li.nav-item
+                                    a.nav-link(href="index.html") About Us
+                            ul.nav.navbar-nav.navbar-right
+                                .searchnotif
+                                    button.search
+                                        iconify-icon(icon="material-symbols-light:search" style="font-size: 22px")
+                                    a(href="#" style="color: rgb(68, 68, 68)")
+                                        iconify-icon(icon="solar:bell-linear")
+                                li.nav-item
+                                    .dropdown
+                                        .profilebtn.dropdown-toggle(id="dropdownProfile" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                                            img.profileimg(src="/iso/images/noimages.jpg" alt="")
+                                            .profileData
+                                                .profileName Scarlett Perez
+                                                .profileStatus Pemula
+                                        .dropdown-menu(aria-labelledby="dropdownProfile")
+                                            a.dropdown-item(href="#") View Profile
+                                            a.dropdown-item(href="#") Setting & Privacy
+                                            a.dropdown-item(href="#") Bantuan
+                                            a.dropdown-item(href="#") Bahasa
+                                            a.dropdown-item.text-danger(href="#") Keluar
+            .search_input#search_input_box
+                .container
+                    form.d-flex.justify-content-between
+                        input.form-control#search_input(type="text" placeholder="Search Here")
+                        button.btn(type="submit")
+                        span.lnr.lnr-cross#close_search(title="Close Search")
+
+    script(src="/assets/js/lib/jquery-3.7.1.min.js") 
+    script(src="/assets/js/lib/bootstrap.bundle.min.js") 
+    script(src="/assets/js/lib/iconify-icon.min.js") 
+    script(src="https://cdn.webix.com/edge/webix.js" type="text/javascript")
+    script(src="/assets/js/app.js") 
+    script(src="/karma/js/jquery.sticky.js") 
+    script(src="/karma/js/main.js") 
+    block script
+    block js

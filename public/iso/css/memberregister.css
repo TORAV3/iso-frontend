@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  background-color: white;
+}
+
+.wrapper {
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: 100px;
+  background-color: white;
+}
+
+.logostyle {
+  border: none;
+}
+
+.hrstyle {
+  border: none;
+}
+
+.hrstyle hr {
+  border: 1px solid #316aff;
+}
+
+.titlestyle {
+  border: none;
+}
+
+.titlestyle .webix_template .title {
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+}
+
+.btnSimpan .webix_el_box button,
+.btnSimpan .webix_el_box button:hover,
+.btnSimpan .webix_el_box button:focus {
+  background-color: #316aff;
+  color: white;
+  border-radius: 7px;
+  text-align: center;
+}
+
+.btnKembali .webix_el_box button,
+.btnKembali .webix_el_box button:hover,
+.btnKembali .webix_el_box button:focus {
+  background-color: transparent;
+  color: rgb(83, 83, 83);
+  border: 1px solid rgb(61, 61, 61);
+  border-radius: 7px;
+  text-align: center;
+}
+
+.uploadstyle {
+  border: none;
+}
+
+.uploadstyle .webix_template {
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 20px;
+  }
+
+  .logostyle .webix_template img {
+    width: 210px;
+  }
+}
+
+.registerForm {
+  border: none;
+  border-radius: 10px;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.input-container input[type="text"] {
+  width: 100%;
+  padding-right: 40px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.input-container .icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #555;
+  font-size: 16px;
+}
+
+.input-container input[type="file"] {
+  display: none;
+}

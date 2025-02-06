@@ -72,7 +72,7 @@ webix.ui({
           css: "btnmasuk",
           click: submit_form,
         },
-        { view: "button", value: "Masuk", css: "btndaftar" },
+        { view: "button", value: "Masuk", css: "btndaftar", click: gotoLogin },
       ],
     },
   ],
@@ -84,6 +84,11 @@ webix.ui({
     tnc: webix.rules.isChecked,
   },
 });
+
+function gotoLogin() {
+  window.location.href = "/login";
+}
+
 function submit_form() {
   const form = $$("registerForm");
   if (form.validate()) {

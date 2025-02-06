@@ -286,6 +286,25 @@ function loadUserData(status = "all") {
     });
 }
 
+function updateUserStatus(userId, status) {
+  const url = `http://localhost:3000/iso/api/user/status/${userId}`;
+
+  const requestData = {
+    status: status,
+  };
+
+  webix
+    .ajax()
+    .headers({ Authorization: "Bearer " + token })
+    .put(url, requestData)
+    .then(function (data) {
+      loadUserData();
+    })
+    .catch(function (err) {
+      console.error("Error loading data:", err);
+    });
+}
+
 function deleteUser(id) {
   axios
     .delete(`http://localhost:3000/iso/api/user/internal/delete/${id}`, {
@@ -303,6 +322,35 @@ function deleteUser(id) {
     });
 }
 
+var myWin = webix.ui({
+  view: "window",
+  head: "Form Notifikasi User",
+  modal: true,
+  position: "center",
+  body: {
+    view: "form",
+    elements: [
+      {
+        view: "textarea",
+        label: "Pesan",
+        name: "message",
+        id: "message",
+        labelPosition: "top",
+        height: 150,
+      },
+      {
+        view: "button",
+        value: "Submit",
+        css: "btnmodalsave",
+        click: function (elementId, event) {
+          this.getParentView().getParentView().close();
+        },
+      },
+    ],
+  },
+  move: true,
+});
+
 var statusCombo = {
   view: "combo",
   value: "all",
@@ -312,9 +360,9 @@ var statusCombo = {
     { id: "approve", value: "Approve" },
     { id: "reject", value: "Reject" },
     { id: "revisi", value: "Revisi" },
-    { id: "review", value: "Review" },
+    { id: "reviewed", value: "Reviewed" },
   ],
-  width: 100,
+  width: 110,
   name: "status",
   align: "left",
   on: {
@@ -399,7 +447,7 @@ var table = {
         case "reject":
           css = "row-red";
           break;
-        case "review":
+        case "reviewed":
           css = "row-orange";
           break;
         case "register":
@@ -443,6 +491,36 @@ webix.ready(function () {
     container: "index-page",
     margin: 20,
     rows: [title, toolbar, datatable],
+  });
+
+  webix.ui({
+    view: "contextmenu",
+    id: "cmenu",
+    master: $$("table"),
+    data: ["Approve", "Revisi", "Reject"],
+    on: {
+      onItemClick: function (id) {
+        var context = this.getContext();
+        var rowId = context.id;
+        var rowData = $$("table").getItem(rowId);
+
+        var menuItem = this.getItem(id);
+        switch (menuItem.value) {
+          case "Approve":
+            updateUserStatus(rowData.id, "approve");
+            break;
+          case "Revisi":
+            // myWin.show();
+            updateUserStatus(rowData.id, "revisi");
+            break;
+          case "Reject":
+            updateUserStatus(rowData.id, "reject");
+            break;
+          default:
+            break;
+        }
+      },
+    },
   });
 
   $$("table").registerFilter(

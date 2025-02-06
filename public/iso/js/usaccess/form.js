@@ -36,6 +36,8 @@ function loadUserDetailData() {
       $$("role").setValue(res.data.data.roleId);
       $$("muser").setValue(res.data.data.access.muser);
       $$("usaccess").setValue(res.data.data.access.usaccess);
+      $$("mkelas").setValue(res.data.data.access.mkelas);
+      $$("mintquestion").setValue(res.data.data.access.mintquestion);
     })
     .catch((err) => {
       console.log(err);
@@ -139,6 +141,24 @@ var form = {
                           label: "User Access",
                           name: "usaccess",
                           id: "usaccess",
+                          labelWidth: 160,
+                          minWidth: 200,
+                        },
+                        {
+                          view: "switch",
+                          value: 0,
+                          label: "Manajemen Kelas",
+                          name: "mkelas",
+                          id: "mkelas",
+                          labelWidth: 160,
+                          minWidth: 200,
+                        },
+                        {
+                          view: "switch",
+                          value: 0,
+                          label: "Manajemen Pertanyaan Wawancara",
+                          name: "mintquestion",
+                          id: "mintquestion",
                           labelWidth: 160,
                           minWidth: 200,
                         },

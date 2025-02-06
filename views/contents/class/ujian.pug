@@ -1,0 +1,68 @@
+extends ../../layouts/layout
+
+block title
+  | Ujian Kelas
+
+block csslink
+  link(rel='stylesheet' href='/iso/css/ujian.css')
+
+block content
+  section.topPageContainer
+    h5(style="color:white;") Pelatihan Bahasa & Budaya Kerja
+    span(style="display: inline-block; margin-top: 15px;color:white;")
+      | Mulailah petualangan bahasa Jepangmu dengan kelas online Basic
+      | Jepang! Pelajari Hiragana, Katakana, partikel dasar, kosakata, dan
+      | nikmati membaca cerita sederhana. Cocok untuk pemula! Bergabunglah
+      | sekarang!
+  section.bottomPageContainer
+    .cardSection 
+      .row 
+        .col-lg-4 
+          .featureBlock
+            .featureCard
+              img(style="width: 45px" src="/iso/images/icon-ujian1.png" alt="")
+              span.desc It takes very little of your time, so easy.
+        .col-lg-4 
+          .featureBlock
+            .featureCard
+              img(style="width: 45px" src="/iso/images/icon-ujian2.png" alt="")
+              span.desc It takes very little of your time, so easy.
+        .col-lg-4 
+          .featureBlock
+            .featureCard
+              img(style="width: 45px" src="/iso/images/icon-ujian3.png" alt="")
+              span.desc It takes very little of your time, so easy.
+    #index-page
+
+//- .featureIcon
+//- .contentSection
+//-   .row.mt-4
+//-     .col-12.col-lg-4.mt-3.mt-lg-0
+//-       .classTypeCard
+//-         img.thumbclasstype(src="img/class1.png" alt="")
+//-         .descsection
+//-           img.imgbatch(src="img/batch.png" alt="")
+//-           .classtypetitle
+//-             span.title PERKENALAN
+//-             span.subtitle bulan ke-15
+//-           span.text-center.text-white
+//-             | Kesempatan untuk berkenalan dengan para peserta lainnya,
+//-             | tim ISO JEPANG, dan tujuan pelatihan, serta membangun
+//-             | suasana yang positif dan kolaboratif untuk memulai
+//-             | perjalanan memahami budaya kerja Jepang.
+//-         button.btn.btn-primary(style="width: 100%") Lanjutkan
+
+  //- #index-page
+  //- .row  
+  //-   .col-lg-8 
+  //-     #left-container
+  //-   .col-lg-4
+  //-     #right-container
+block script
+  script(src='/iso/js/class/ujian.js')
+  script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" type="text/javascript")
+
+block js
+  script.
+    const token = "#{token}"
+    window.pageId = "#{id}";
