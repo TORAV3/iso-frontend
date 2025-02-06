@@ -34,18 +34,23 @@ webix.ui({
           value: 0,
         },
         { view: "button", value: "Masuk", css: "btnmasuk", click: submit_form },
-        { view: "button", value: "Daftar", css: "btndaftar" },
-        {
-          template: `<hr/>`,
-          borderless: true,
-          height: 10,
-        },
         {
           view: "button",
-          label:
-            "<img src='iso/images/google-icon.png' style='width:13px; margin-right: 14px'></img><span class='text'>Sign In with Google</span>",
+          value: "Daftar",
           css: "btndaftar",
+          click: gotoRegister,
         },
+        // {
+        //   template: `<hr/>`,
+        //   borderless: true,
+        //   height: 10,
+        // },
+        // {
+        //   view: "button",
+        //   label:
+        //     "<img src='iso/images/google-icon.png' style='width:13px; margin-right: 14px'></img><span class='text'>Sign In with Google</span>",
+        //   css: "btndaftar",
+        // },
       ],
     },
   ],
@@ -54,6 +59,11 @@ webix.ui({
     email: webix.rules.isEmail,
   },
 });
+
+function gotoRegister() {
+  window.location.href = "/register";
+}
+
 function submit_form() {
   const form = $$("loginForm");
   if (form.validate()) {
@@ -80,7 +90,7 @@ function submit_form() {
               }, 1300);
             } else {
               setTimeout(() => {
-                window.location.href = "/dashboard";
+                window.location.href = "/kelas";
               }, 1300);
             }
           })

@@ -14,7 +14,10 @@ function loadUserDetailData() {
         res.data.data.status === "approve" ? "Siswa ISO" : "Siswa Trial";
       const profImage = document.querySelector(".profile-img");
 
-      if (res.data.data.userDetail.pasFoto) {
+      if (
+        res.data.data.status !== "register" &&
+        res.data.data.userDetail.pasFoto
+      ) {
         profImage.src = res.data.data.userDetail.pasFotoBase64;
       }
       $$("id").setValue(res.data.data.id);
@@ -22,36 +25,39 @@ function loadUserDetailData() {
       $$("fullname").setValue(res.data.data.fullname);
       $$("email").setValue(res.data.data.email);
       $$("phone").setValue(res.data.data.phone);
-      $$("nik").setValue(res.data.data.userDetail.nik);
-      $$("trainbef").setValue(res.data.data.userDetail.trainbef);
-      $$("gender").setValue(res.data.data.userDetail.gender);
-      $$("height").setValue(res.data.data.userDetail.height);
-      $$("weight").setValue(res.data.data.userDetail.weight);
-      $$("birthplace").setValue(res.data.data.userDetail.birthplace);
-      $$("birthdate").setValue(res.data.data.userDetail.birthdate);
-      $$("religion").setValue(res.data.data.userDetail.religion);
-      $$("lastedu").setValue(res.data.data.userDetail.lastedu);
-      $$("program").setValue(res.data.data.userDetail.program);
-      $$("city").setValue(res.data.data.userDetail.city);
-      $$("address").setValue(res.data.data.userDetail.address);
-      $$("address").setValue(res.data.data.userDetail.address);
-      $$("dadName").setValue(res.data.data.userDetail.dadName);
-      $$("dadPhone").setValue(res.data.data.userDetail.dadPhone);
-      $$("dadAddress").setValue(res.data.data.userDetail.dadAddress);
-      $$("momName").setValue(res.data.data.userDetail.momName);
-      $$("momPhone").setValue(res.data.data.userDetail.momPhone);
-      $$("momAddress").setValue(res.data.data.userDetail.momAddress);
-      $$("kinsmanName").setValue(res.data.data.userDetail.kinsmanName);
-      $$("kinsmanPhone").setValue(res.data.data.userDetail.kinsmanPhone);
-      $$("kinsmanAddress").setValue(res.data.data.userDetail.kinsmanAddress);
-      $$("ktp").setValue(res.data.data.userDetail.ktp);
-      $$("kk").setValue(res.data.data.userDetail.kk);
-      $$("pasFoto").setValue(res.data.data.userDetail.pasFoto);
-      $$("fullBodyFoto").setValue(res.data.data.userDetail.fullBodyFoto);
-      $$("akta").setValue(res.data.data.userDetail.akta);
-      $$("sks").setValue(res.data.data.userDetail.sks);
-      $$("vaksin").setValue(res.data.data.userDetail.vaksin);
-      $$("sertifikat").setValue(res.data.data.userDetail.sertifikat);
+
+      if (res.data.data.status !== "register") {
+        $$("nik").setValue(res.data.data.userDetail.nik);
+        $$("trainbef").setValue(res.data.data.userDetail.trainbef);
+        $$("gender").setValue(res.data.data.userDetail.gender);
+        $$("height").setValue(res.data.data.userDetail.height);
+        $$("weight").setValue(res.data.data.userDetail.weight);
+        $$("birthplace").setValue(res.data.data.userDetail.birthplace);
+        $$("birthdate").setValue(res.data.data.userDetail.birthdate);
+        $$("religion").setValue(res.data.data.userDetail.religion);
+        $$("lastedu").setValue(res.data.data.userDetail.lastedu);
+        $$("program").setValue(res.data.data.userDetail.program);
+        $$("city").setValue(res.data.data.userDetail.city);
+        $$("address").setValue(res.data.data.userDetail.address);
+        $$("address").setValue(res.data.data.userDetail.address);
+        $$("dadName").setValue(res.data.data.userDetail.dadName);
+        $$("dadPhone").setValue(res.data.data.userDetail.dadPhone);
+        $$("dadAddress").setValue(res.data.data.userDetail.dadAddress);
+        $$("momName").setValue(res.data.data.userDetail.momName);
+        $$("momPhone").setValue(res.data.data.userDetail.momPhone);
+        $$("momAddress").setValue(res.data.data.userDetail.momAddress);
+        $$("kinsmanName").setValue(res.data.data.userDetail.kinsmanName);
+        $$("kinsmanPhone").setValue(res.data.data.userDetail.kinsmanPhone);
+        $$("kinsmanAddress").setValue(res.data.data.userDetail.kinsmanAddress);
+        $$("ktp").setValue(res.data.data.userDetail.ktp);
+        $$("kk").setValue(res.data.data.userDetail.kk);
+        $$("pasFoto").setValue(res.data.data.userDetail.pasFoto);
+        $$("fullBodyFoto").setValue(res.data.data.userDetail.fullBodyFoto);
+        $$("akta").setValue(res.data.data.userDetail.akta);
+        $$("sks").setValue(res.data.data.userDetail.sks);
+        $$("vaksin").setValue(res.data.data.userDetail.vaksin);
+        $$("sertifikat").setValue(res.data.data.userDetail.sertifikat);
+      }
     })
     .catch((err) => {
       console.log(err);
